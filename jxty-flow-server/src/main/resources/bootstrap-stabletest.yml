@@ -1,0 +1,13 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://10.99.112.229:7066/eureka/
+spring:
+  application:
+    name: fast-flow-server
+  activiti:
+    check-process-definitions: false
+    async-executor-activate: false
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/**/*.xml

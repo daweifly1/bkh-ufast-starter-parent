@@ -1,0 +1,29 @@
+spring:
+  redis:
+    host: 10.99.112.228
+    port: 7021
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@10.99.112.233:1521:test
+    username: scmtest
+    password: scmtest
+  mvc:
+    servlet:
+      load-on-startup: 1
+#  thymeleaf:
+#    prefix: classpath:/static/
+#    suffix: .html
+#    cache: false
+access_token:
+  store-jwt: false
+  jwt-signing-key: bkrwin.com
+  add-userinfo: false
+souce:
+  id: system
+oauth-gateway:
+  uri: http://tsso-ec.jxcc.com:9010
+logging:
+  file: /opt/jxty/logs/oauth2.log
+  level:
+    root: info
+    ufast: info  

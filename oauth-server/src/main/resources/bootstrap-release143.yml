@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: oauth-center
+server:
+  port: 7091
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.1.143:7081/eureka
+  instance:
+    prefer-ip-address: true
+

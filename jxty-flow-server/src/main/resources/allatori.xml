@@ -1,0 +1,25 @@
+<config>
+    <input basedir="../../../target">
+        <jar in="auth-server-0.0.4-SNAPSHOT.jar" out="auth-server-0.0.4-SNAPSHOT.jar"/>
+    </input>
+
+    <keep-names>
+        <class access="protected+">
+            <field access="protected+"/>
+            <field template="java.lang.Boolean *"/>
+
+            <method access="protected+"/>
+        </class>
+
+        <class template="class *Controller">
+            <method access="protected+" parameters="keep"/>
+        </class>
+
+        <class template="class * instanceof yb.ecp.fast.infra.infra.monitor.MemoryMonitor"/>
+    </keep-names>
+    <!-- <expiry date="2019/01/01" string="your application expired!"/> -->
+
+    <property name="log-file" value="../../../target/renaming-log.xml"/>
+    <property name="string-encryption" value="disable" apply2class="class yb.ecp.fast.infra.infra.log.*"/>
+    <property name="string-encryption" value="disable" apply2class="class yb.ecp.fast.infra.security.*"/>
+</config>

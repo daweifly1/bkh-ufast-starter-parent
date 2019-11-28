@@ -1,0 +1,40 @@
+server:
+  port: 7090
+
+spring:
+  application:
+    name: oauth2-gateway
+  thymeleaf:
+    prefix: classpath:/static/
+    suffix: .html
+    cache: false
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.1.143:7081/eureka
+  instance:
+    prefer-ip-address: true
+
+# 如果路由方式是serviceId的方式，那么ribbon的生效，如果是url的方式，则zuul.host开头的生效
+ribbon:
+  ReadTimeout: 50000
+  ConnectTimeout: 10000
+zuul:
+  host:
+    socket-timeout-millis: 50000
+    connect-timeout-millis: 10000
+  #添加代理头
+  add-proxy-headers: true
+  #敏感头信息
+  sensitive-headers:
+  routes:
+    #服务认证和授权
+    uaa:
+      path: /oauth/**
+      serviceId: oauth-center
+      strip-prefix: false
+logging:
+  file: /opt/jxty/logs/gatewayoauth2.log
+  level:
+    root: info
+    ufast: info        

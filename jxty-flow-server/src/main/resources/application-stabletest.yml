@@ -1,0 +1,31 @@
+server:
+  port: 9009
+spring:
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@10.99.112.233:1521:test
+    username: scmtest
+    password: scmtest
+  redis:
+    host: 10.99.112.228
+    port: 7021
+    pool:
+      max-active: 8
+  cloud:
+    inetutils:
+      preferred-networks:
+        - 10.99
+userTask:
+  convert:
+    server-name: ufast-auth-server
+    aip-url: /parse
+activiti:
+  role:
+    key: name
+logging:
+  file: /opt/jxty/logs/flow-server.log
+  level:
+    root: warn
+    com.len.mapper: debug
+    org.activiti.engine.impl.persistence.entity: debug
+    ufast: debug

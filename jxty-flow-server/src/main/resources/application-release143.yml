@@ -1,0 +1,31 @@
+server:
+  port: 7089
+spring:
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@192.168.1.190:1521:orcl
+    username: jxty
+    password: 123456
+  redis:
+    host: 192.168.1.143
+    port: 6379
+    pool:
+      max-active: 8
+  cloud:
+    inetutils:
+      preferred-networks:
+        - 192.168      
+userTask:
+  convert:
+    server-name: ufast-auth-server
+    aip-url: /parse
+activiti:
+  role:
+    key: name
+logging:
+  file: /opt/jxty/logs/flow-server.log
+  level:
+    root: warn
+    com.len.mapper: debug
+    org.activiti.engine.impl.persistence.entity: debug
+    ufast: debug

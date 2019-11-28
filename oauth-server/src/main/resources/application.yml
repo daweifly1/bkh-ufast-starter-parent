@@ -1,0 +1,24 @@
+spring:
+  redis:
+    host: 192.168.1.143
+    port: 6379
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    url: jdbc:oracle:thin:@192.168.1.190:1521:orcl
+    username: jxty
+    password: 123456
+  mvc:
+    servlet:
+      load-on-startup: 1
+#  thymeleaf:
+#    prefix: classpath:/static/
+#    suffix: .html
+#    cache: false
+access_token:
+  store-jwt: false
+  jwt-signing-key: bkrwin.com
+  add-userinfo: false
+souce:
+  id: system
+oauth-gateway:
+  uri: http://192.168.1.142:9999
